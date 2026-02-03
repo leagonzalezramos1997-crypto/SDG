@@ -30,8 +30,11 @@ def bucle_menu():
             if opcion == 1:
                 print("\nCree producto en el sistema\n")
                 producto = datos.crear_producto()
-                gestion.agregar_producto(producto)     
-           
+                if producto:
+                   gestion.agregar_producto(producto)  
+                else:
+                    print("Creación cancelada")  
+                 
             elif opcion == 2:
                 print("\nMostrando inventario\n")
                 gestion.mostrar_inventario()
